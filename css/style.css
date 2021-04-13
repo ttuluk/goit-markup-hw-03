@@ -8,6 +8,16 @@
   --footer-bg-color: #2f303a;
   --footer-text-color: rgba(255, 255, 255, 0.6);
   --button-bg-color: rgba(245, 244, 250, 1);
+  --border-color: rgba(236, 236, 236, 1);
+}
+/*тип блочной модели*/
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
@@ -18,6 +28,16 @@ body {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+}
+.page-header {
+  border-bottom: 1px solid var(--border-color);
+}
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+  outline: 2px solid red;
 }
 /*убирает точки в списке*/
 .list {
@@ -41,6 +61,7 @@ body {
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  max-width: 145px;
 }
 .logo {
   color: var(--accent-text-color);
@@ -56,6 +77,8 @@ body {
 /*навигационные ссылки*/
 .list {
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .site-nav {
   font-weight: 500;
@@ -82,8 +105,13 @@ body {
 .hero {
   background-color: #2f303a;
   color: var(--secondary-text-color);
+  outline: 2px solid red;
 }
-
+.hero-container {
+  padding: auto;
+  margin: 0 auto;
+  width: 696px;
+}
 .hero-title {
   color: var(--secondary-text-color);
   font-style: 400;
@@ -91,6 +119,10 @@ body {
   font-size: 44px;
   line-height: 1.36;
   text-transform: uppercase;
+  text-align: center;
+  min-width: 696px;
+  margin-top: 0;
+  margin-bottom: 30px;
 }
 
 /*кнопка*/
@@ -99,14 +131,18 @@ button {
   border: none;
   font: inherit;
   color: inherit;
+  min-width: 200px;
+  padding: 10px 30px;
 }
-.button {
+.hero .button {
   background-color: var(--accent-text-color);
   color: var(--secondary-text-color);
   font-weight: 900;
   font-size: 16px;
   line-height: 1.87;
   text-align: center;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
 .button:hover,
@@ -116,6 +152,10 @@ button {
 }
 
 /*Раздел преимущества*/
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
 /*скрытый заголовок*/
 .visually-hidden {
   position: absolute !important;
@@ -126,6 +166,7 @@ button {
   height: 1px !important;
   width: 1px !important;
   overflow: hidden;
+  margin-bottom: 0;
 }
 
 .features-title {
@@ -136,6 +177,8 @@ button {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--title-text-color);
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 .section-title {
   font-weight: 700;
@@ -144,20 +187,43 @@ button {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /*чем мы занимаемся*/
-
+.no-padding {
+  padding-top: 0;
+}
 /*наша команда*/
 .section.team {
   background-color: var(--secondary-bg-color);
 }
+.team-item {
+  display: inline-block;
+  width: 270px;
+}
 .team-title {
+  display: inline-block;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
   letter-spacing: 0.03em;
   color: var(--title-text-color);
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 30px;
+  padding-bottom: 10px;
+  min-width: 270px;
+}
+.team-list p {
+  display: inline-block;
+  padding-bottom: 30px;
+  min-width: 270px;
 }
 
 /*подвал*/
@@ -167,12 +233,15 @@ footer {
   letter-spacing: 0.03em;
   background-color: var(--footer-bg-color);
   color: var(--secondary-text-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 footer .link-logo {
   color: var(--secondary-text-color);
 }
 .address {
   font-style: inherit;
+  margin-top: 20px;
 }
 .address-link {
   color: var(--secondary-text-color);
