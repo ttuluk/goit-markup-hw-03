@@ -29,16 +29,16 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
 }
-.page-header {
-  border-bottom: 1px solid var(--border-color);
-}
+
 .container {
   width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   outline: 2px solid red;
 }
+
 /*убирает точки в списке*/
 .list {
   list-style: none;
@@ -49,20 +49,32 @@ body {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /*шапка*/
+.page-header {
+  border-bottom: 1px solid var(--border-color);
+}
 
 /*логотип*/
 .link-logo {
+  display: inline-block;
+
+  min-width: 145px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
   color: black;
+
   font-family: Raleway;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-  max-width: 145px;
 }
+
 .logo {
   color: var(--accent-text-color);
 }
@@ -80,12 +92,40 @@ body {
   padding: 0;
   margin: 0;
 }
+.nav-header {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav {
+  display: flex;
+}
+
 .site-nav {
+  display: flex;
+  margin-left: 93px;
+
+  color: var(--title-text-color);
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: var(--title-text-color);
+}
+
+.site-nav > .item {
+  display: flex;
+  margin-right: 50px;
+}
+
+.site-nav > .item:last-child {
+  margin-right: 0;
+}
+
+.site-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
 }
 
 .site-nav .current {
@@ -94,35 +134,63 @@ body {
 
 /*контакты*/
 .auth-nav {
+  display: flex;
+  margin-left: auto;
+
+  color: var(--prime-text-color);
+
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  color: var(--prime-text-color);
+}
+
+.auth-nav > .item {
+  display: flex;
+}
+
+.auth-nav .item + .item {
+  margin-left: 50px;
+}
+
+.auth-nav .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+/*утилиты*/
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
 }
 
 /*герой*/
 .hero {
-  background-color: #2f303a;
   color: var(--secondary-text-color);
+  background-color: #2f303a;
   outline: 2px solid red;
 }
 .hero-container {
-  padding: auto;
-  margin: 0 auto;
+  display: block;
   width: 696px;
 }
+
 .hero-title {
+  display: inline-block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 30px;
+
   color: var(--secondary-text-color);
+
   font-style: 400;
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   text-transform: uppercase;
-  text-align: center;
-  min-width: 696px;
-  margin-top: 0;
-  margin-bottom: 30px;
 }
 
 /*кнопка*/
@@ -137,10 +205,12 @@ button {
 .hero .button {
   background-color: var(--accent-text-color);
   color: var(--secondary-text-color);
+
   font-weight: 900;
   font-size: 16px;
   line-height: 1.87;
   text-align: center;
+
   border: 1px solid transparent;
   border-radius: 4px;
 }
@@ -169,6 +239,16 @@ button {
   margin-bottom: 0;
 }
 
+.card-set {
+  display: flex;
+  margin-left: -30px;
+}
+
+.card-set .item {
+  flex-basis: calc((100% - 4 * 30px) / 4);
+  margin-left: 30px;
+}
+
 .features-title {
   font-style: normal;
   font-weight: bold;
@@ -190,25 +270,41 @@ button {
   margin-top: 0;
   margin-bottom: 50px;
 }
-p {
-  margin-top: 0;
-  margin-bottom: 0;
-}
 
 /*чем мы занимаемся*/
 .no-padding {
   padding-top: 0;
 }
+.work-box {
+  padding: 0;
+}
+.works {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.works .item {
+  display: flex;
+  margin-right: 30px;
+}
+.works .item:last-child {
+  margin-right: 0;
+}
+img {
+  display: inline-block;
+}
+
 /*наша команда*/
 .section.team {
   background-color: var(--secondary-bg-color);
 }
+
 .team-item {
   display: inline-block;
-  width: 270px;
+  padding-bottom: 30px;
+  min-width: 270px;
 }
 .team-title {
-  display: inline-block;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
@@ -220,12 +316,6 @@ p {
   padding-bottom: 10px;
   min-width: 270px;
 }
-.team-list p {
-  display: inline-block;
-  padding-bottom: 30px;
-  min-width: 270px;
-}
-
 /*подвал*/
 footer {
   font-size: 14px;
