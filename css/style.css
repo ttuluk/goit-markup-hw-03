@@ -188,6 +188,8 @@ p {
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
 
   color: var(--secondary-text-color);
 
