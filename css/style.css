@@ -433,6 +433,7 @@ footer .link-logo {
   border: 1px solid var(--border-portfolio-color);
 }
 
+.galery-image:hover,
 .galery-item:hover,
 .galery-item:focus {
   box-shadow: var(--prime-card-swadow);
