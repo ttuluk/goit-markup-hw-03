@@ -19,6 +19,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *::before,
 *::after {
@@ -430,7 +431,6 @@ footer .link-logo {
   flex-basis: calc((100% - 3 * 30px) / 3);
   margin-right: 30px;
   margin-top: 30px;
-  border: 1px solid var(--border-portfolio-color);
 }
 
 .galery-image:hover,
@@ -444,6 +444,9 @@ footer .link-logo {
 }
 
 .galery-card-text {
+  border-right: 1px solid var(--border-portfolio-color);
+  border-bottom: 1px solid var(--border-portfolio-color);
+  border-left: 1px solid var(--border-portfolio-color);
   padding: 20px 24px;
 }
 
