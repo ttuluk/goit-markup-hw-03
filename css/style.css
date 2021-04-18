@@ -11,8 +11,9 @@
   --border-color: rgba(236, 236, 236, 1);
   --border-team-color: rgba(255, 255, 255, 1);
   --border-portfolio-color: rgba(238, 238, 238, 1);
-  --prime-shadow-color: rgba(0, 0, 0, 0.25);
-  --secondary-shadow-color: ;
+  --prime-card-swadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --secondary-card-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 /*тип блочной модели*/
 html {
@@ -304,7 +305,8 @@ button {
   margin-right: 0;
 }
 img {
-  display: inlinr-block;
+  display: block;
+  max-width: 100%;
 }
 
 /*наша команда*/
@@ -312,9 +314,6 @@ img {
   background-color: var(--secondary-bg-color);
 }
 
-.team-image {
-  margin-bottom: 30px;
-}
 .card-set {
   display: flex;
   flex-wrap: wrap;
@@ -326,19 +325,24 @@ img {
   display: flex;
   flex-direction: column;
   flex-basis: calc((100% - 4 * 30px) / 4);
-  padding-bottom: 30px;
   margin-right: 30px;
   margin-top: 30px;
   text-align: center;
   background-color: var(--secondary-text-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
 }
-
+.card-set .team-item:hover,
+.team-item:focus {
+  box-shadow: var(--secondary-card-shadow);
+}
 .card-set .team-item:nth-child(4n + 4) {
   margin-right: 0;
 }
+.team-card-text {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 .team-title {
   display: inline-block;
   width: 270px;
@@ -369,6 +373,13 @@ footer .link-logo {
   font-style: inherit;
   margin-top: 20px;
 }
+.contacts-item {
+  margin-bottom: 9px;
+}
+
+.contacts-item:last-child {
+  margin-bottom: 0;
+}
 .address-link {
   color: var(--secondary-text-color);
 }
@@ -380,10 +391,9 @@ footer .link-logo {
 .container .filter-box {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 34px;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 22px;
 }
 
 .filter-button {
@@ -391,7 +401,6 @@ footer .link-logo {
   padding: 6px 22px;
   border: 1px solid transparent;
   border-radius: 4px;
-  box-shadow: 0px 4px 4px 0px var(--prime-shadow-color);
 
   color: var(--title-text-color);
   background-color: var(--button-bg-color);
@@ -409,6 +418,7 @@ footer .link-logo {
   background-color: var(--accent-text-color);
   color: var(--secondary-text-color);
   cursor: pointer;
+  box-shadow: var(--prime-card-swadow);
 }
 
 .filter-button:last-child {
@@ -417,13 +427,17 @@ footer .link-logo {
 
 .card-set .galery-item {
   display: flex;
-  flex-direction: column;
   flex-basis: calc((100% - 3 * 30px) / 3);
   margin-right: 30px;
   margin-top: 30px;
   border: 1px solid var(--border-portfolio-color);
-  box-shadow: 0px 4px 4px 0px var(--prime-shadow-color);
 }
+
+.galery-item:hover,
+.galery-item:focus {
+  box-shadow: var(--prime-card-swadow);
+}
+
 .card-set .galery-item:nth-child(3n + 3) {
   margin-right: 0;
 }
@@ -433,6 +447,8 @@ footer .link-logo {
 }
 
 .galery-title {
+  margin-bottom: 20px;
+
   font-weight: 700;
   font-size: 18px;
   line-height: 2;
