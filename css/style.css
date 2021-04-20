@@ -340,13 +340,11 @@ img {
   margin-right: 0;
 }
 .team-card-text {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding: 30px;
 }
 
 .team-title {
   display: inline-block;
-  width: 270px;
   margin-bottom: 10px;
   color: var(--title-text-color);
   font-weight: 500;
@@ -389,16 +387,20 @@ footer .link-logo {
 }
 
 /*сss для портфолио*/
-.container .filter-box {
+.container .filter-list {
   display: flex;
   justify-content: center;
   margin-bottom: 34px;
   margin-left: auto;
   margin-right: auto;
+  align-items: center;
 }
 
-.filter-button {
+.filter-item {
+  display: flex;
   margin-right: 8px;
+}
+.filter-button {
   padding: 6px 22px;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -437,6 +439,7 @@ footer .link-logo {
 .galery-item:hover,
 .galery-item:focus {
   box-shadow: var(--prime-card-swadow);
+  cursor: pointer;
 }
 
 .card-set .galery-item:nth-child(3n + 3) {
